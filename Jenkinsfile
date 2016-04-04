@@ -1,4 +1,4 @@
-/*node() {
+node() {
   
   // You could parse this out of a pom file, for example...
   def iNeedUpstreamVersion = "1.0";
