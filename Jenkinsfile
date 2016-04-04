@@ -1,4 +1,4 @@
-node() {
+/*node() {
   
   // You could parse this out of a pom file, for example...
   def iNeedUpstreamVersion = "1.0";
@@ -68,7 +68,7 @@ You should have received a copy of the GNU General Public License
 along with Delivery Pipeline Plugin.
 If not, see <http://www.gnu.org/licenses/>.
 */
-package se.diabol.jenkins.pipeline;
+/*package se.diabol.jenkins.pipeline;
 
 import hudson.ExtensionPoint;
 import hudson.model.Cause;
@@ -87,13 +87,13 @@ public abstract class CauseResolver implements ExtensionPoint {
      * @return a TriggerCause or null if the CauseResolver implementation cant find a proper cause indication that
      * other resolvers should make a try
      */
-    @CheckForNull
+  /*  @CheckForNull
     public abstract TriggerCause resolveCause(Cause cause);
 
     /**
      * Returns all loaded implementations of this extension point.
      */
-    public static List<CauseResolver> all() {
+  /*  public static List<CauseResolver> all() {
         return JenkinsUtil.getInstance().getExtensionList(CauseResolver.class);
     }
 
@@ -108,4 +108,4 @@ public abstract class CauseResolver implements ExtensionPoint {
         return new TriggerCause(TriggerCause.TYPE_UNKNOWN, "unknown cause");
     }
 
-}
+} **/
