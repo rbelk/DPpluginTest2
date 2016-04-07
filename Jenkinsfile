@@ -1,27 +1,12 @@
 node() {
-  def iNeedAStage = "stage1";
-
-  registerDownstream(iNeedAStage);
-}
-
-def registerDownstream(stage) {
-
-String script =  """
-  
-  println "REACTOR(master): Consider: " + event.jobFullName;
-  println "I am looking for a version ${stage}";
-  println event.eventProperties['stage'];
-  
-  if(event.eventProperties['stage'] == "${stage}" )
+  String script =  """
+  if(event.eventProperties['stage'] == "stage1" )
     return true;
   return false;
    """;
-
-   println "Registering script : ${script}";
-
+   
   step([$class: 'RegisterReactorStep', scriptData: script ]);
 }
-
 /*
 This file is part of Delivery Pipeline Plugin.
 
