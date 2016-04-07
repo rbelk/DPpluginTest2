@@ -12,7 +12,7 @@ String script =  """
   println "I am looking for a version ${stage}";
   println event.eventProperties['stage'];
   
-  if(event.eventProperties['version'] == "${stage}" )
+  if(event.eventProperties['stage'] == "${stage}" )
     return true;
   return false;
    """;
