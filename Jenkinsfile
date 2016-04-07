@@ -1,9 +1,9 @@
 node() {
   
   // You could parse this out of a pom file, for example...
-  def iNeedUpstreamVersion = "1.0";
+  def stageName = "stage1";
 
-  registerDownstream(iNeedUpstreamVersion);
+  registerDownstream(stageName);
 
   def upstreamRepo = calculateUpstream(currentBuild.rawBuild.causes);
 
@@ -18,15 +18,15 @@ def build() {
 
 }
 
-def registerDownstream(ver) {
+def registerDownstream(stageName) {
 
 String script =  """
   
   println "REACTOR(master): Consider: " + event.jobFullName;
-  println "I am looking for a version ${ver}";
-  println event.eventProperties['version'];
+  println "I am looking for a stageName{stageName}";
+  println event.eventProperties['stage'];
   
-  if(event.eventProperties['version'] == "${ver}" )
+  if(event.eventProperties['stage'] == "${stageName}" )
     return true;
   return false;
    """;
