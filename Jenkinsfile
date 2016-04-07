@@ -23,7 +23,7 @@ def registerDownstream(stageName) {
 String script =  """
   
   println "REACTOR(master): Consider: " + event.jobFullName;
-  println "I am looking for a stageName{stageName}";
+  println "I am looking for a stageName "${stageName}";
   println event.eventProperties['stage'];
   
   if(event.eventProperties['stage'] == "${stageName}" )
