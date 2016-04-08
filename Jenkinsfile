@@ -1,6 +1,6 @@
 node() {
   String script =  """
-  if(event.eventProperties['stage'] == "stage1" )
+  if(event.eventProperties['version'] == "1.0" )
     return true;
   return false;
    """;
